@@ -27,59 +27,6 @@
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <script src="./three.js"></script>
-  <script>
-    // const scene = new THREE.Scene();
-    // const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-    // const renderer = new THREE.WebGLRenderer();
-    // renderer.setSize(window.innerWidth, window.innerHeight);
-    // document.body.appendChild(renderer.domElement);
-
-    // const geometry = new THREE.BoxGeometry(1, 1, 1);
-    // const material = new THREE.MeshBasicMaterial({ color: '#fff' });
-    // const cube = new THREE.Mesh(geometry, material);
-    // scene.add(cube);
-
-    // camera.position.z = 5;
-
-    const render = new THREE.WebGLRenderer(); // 渲染器
-    render.setSize(window.innerWidth, window.innerHeight);
-    const container = document.getElementById('root');
-    container.appendChild(render.domElement)
-    // document.body.appendChild(render.domElement);
-
-    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500);
-    camera.position.set(0, 0, 100);
-    camera.lookAt(0, 0, 0);
-
-    const scene = new THREE.Scene() // 创建场景
-
-    const material = new THREE.LineBasicMaterial({ color: '#1790ff' }); // 线条材质
-
-    // 定义带定点的几何体
-    const points = [];
-    points.push(new THREE.Vector3(-10, 0, 0));
-    points.push(new THREE.Vector3(0, 10, 0));
-    points.push(new THREE.Vector3(10, 0, 0));
-    points.push(new THREE.Vector3(0, -10, 0));
-    points.push(new THREE.Vector3(-10, 0, 0));
-    const geometry = new THREE.BufferGeometry().setFromPoints(points);
-
-    const line = new THREE.Line(geometry, material);
-    scene.add(line);
-    render.render(scene, camera);
-    
-
-    function animate() {
-      requestAnimationFrame(animate);
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-      render.render(scene, camera);
-
-    }
-    animate();
-  </script>
   <div id="root"></div>
   <!--
       This HTML file is a template.
